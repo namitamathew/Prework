@@ -1,5 +1,6 @@
 # Prework - Tip Calculator
 Tip Calculator is an app that calculates the tip as a percentage of the total amount charged for IOS.
+
 Time Spent: 8 hours
 
 ### User Stories
