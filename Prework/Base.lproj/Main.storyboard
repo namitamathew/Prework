@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGA-q7-y0L">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tip Calculator-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" interfaceStyle="dark" id="BYZ-38-t0r" customClass="ViewController" customModule="Prework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE6-CY-fQh" userLabel="Tip Amount Label">
+                                <rect key="frame" x="62" y="288" width="332" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="332" id="v0K-K1-yHR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRC-cF-RHK">
+                                <rect key="frame" x="20" y="278" width="27" height="56"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="PTO-fu-L67" userLabel="Tip Control">
+                                <rect key="frame" x="16" y="225" width="382" height="32"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <color key="selectedSegmentTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="HYy-Al-NEI"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" $0.00              " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYz-pm-okV" userLabel="Total Label">
+                                <rect key="frame" x="62" y="370.5" width="332" height="74.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="332" id="RS5-vx-Ztl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="right" minimumFontSize="80" translatesAutoresizingMaskIntoConstraints="NO" id="xMS-KM-aeD" userLabel="Bill Amount Text Field">
+                                <rect key="frame" x="0.0" y="115" width="414" height="86"/>
+                                <color key="backgroundColor" red="0.13864151554404147" green="0.13864151554404147" blue="0.13864151554404147" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="60"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="HFM-Aa-XfC"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltk-aj-Swn">
+                                <rect key="frame" x="20" y="504" width="64" height="32"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ru-tO-46V">
+                                <rect key="frame" x="92" y="490" width="302" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="302" id="YCv-I2-JRN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPO-JR-xjh">
+                                <rect key="frame" x="20" y="374" width="34" height="67"/>
+                                <fontDescription key="fontDescription" name=".SFNS-Regular" family=".SF NS" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="PTO-fu-L67" firstAttribute="top" secondItem="xMS-KM-aeD" secondAttribute="bottom" constant="24" id="4wS-JP-Afg"/>
+                            <constraint firstItem="xMS-KM-aeD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="5qO-X4-kWj"/>
+                            <constraint firstItem="vPO-JR-xjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6s3-EJ-xjK"/>
+                            <constraint firstItem="NYz-pm-okV" firstAttribute="top" secondItem="QE6-CY-fQh" secondAttribute="bottom" constant="32.5" id="7ix-bt-Fp9"/>
+                            <constraint firstItem="PTO-fu-L67" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="83s-zj-Ogh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ru-tO-46V" secondAttribute="trailing" constant="20" id="8JJ-23-tQr"/>
+                            <constraint firstItem="BRC-cF-RHK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8Te-Se-QJC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QE6-CY-fQh" secondAttribute="trailing" constant="20" id="Gw3-Ph-u9R"/>
+                            <constraint firstItem="ltk-aj-Swn" firstAttribute="top" secondItem="NYz-pm-okV" secondAttribute="bottom" constant="59" id="JLZ-fH-Z3J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PTO-fu-L67" secondAttribute="trailing" constant="16" id="Ku6-BQ-YgR"/>
+                            <constraint firstItem="NYz-pm-okV" firstAttribute="top" secondItem="QE6-CY-fQh" secondAttribute="bottom" constant="32.5" id="L3x-mt-aex"/>
+                            <constraint firstItem="ltk-aj-Swn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O1f-ao-v26"/>
+                            <constraint firstItem="QE6-CY-fQh" firstAttribute="top" secondItem="PTO-fu-L67" secondAttribute="bottom" constant="32" id="RQ7-gy-cf5"/>
+                            <constraint firstItem="xMS-KM-aeD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gK2-m0-mLp"/>
+                            <constraint firstItem="vPO-JR-xjh" firstAttribute="top" secondItem="BRC-cF-RHK" secondAttribute="bottom" constant="40" id="kit-05-xAZ"/>
+                            <constraint firstItem="xMS-KM-aeD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qgW-I2-gT0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NYz-pm-okV" secondAttribute="trailing" constant="20" id="qum-tV-ftp"/>
+                            <constraint firstItem="BRC-cF-RHK" firstAttribute="top" secondItem="PTO-fu-L67" secondAttribute="bottom" constant="22" id="xD1-6i-hs2"/>
+                            <constraint firstItem="7ru-tO-46V" firstAttribute="top" secondItem="NYz-pm-okV" secondAttribute="bottom" constant="45" id="yqR-x3-lnW"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ToB-dM-T1s" appends="YES" id="0Qt-S7-Ezv"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="czx-7C-pWO">
+                        <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="Kok-SM-Mot">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="LO6-DW-z4O" kind="show" id="0MO-gz-dWf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="billAmountTextField" destination="xMS-KM-aeD" id="dIS-9b-wPp"/>
+                        <outlet property="eachLabel" destination="7ru-tO-46V" id="VyL-e3-3M2"/>
+                        <outlet property="tipAmountLabel" destination="QE6-CY-fQh" id="eUx-YH-d41"/>
+                        <outlet property="tipControl" destination="PTO-fu-L67" id="Wdt-SU-m6h"/>
+                        <outlet property="totalLabel" destination="NYz-pm-okV" id="etL-O9-Hkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ToB-dM-T1s">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="pGc-S2-QXY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1278.2608695652175" y="77.008928571428569"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="NkB-Df-Y78">
+            <objects>
+                <viewController id="LO6-DW-z4O" customClass="SettingsViewController" customModule="Prework" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p0h-px-szl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Default Tips:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2Z-gV-gV0">
+                                <rect key="frame" x="37" y="135" width="152" height="25"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip 1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94X-7r-bi0">
+                                <rect key="frame" x="61" y="194" width="45" height="22"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip 2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqo-vG-spG">
+                                <rect key="frame" x="61" y="255" width="45" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip 3:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p78-eF-0C3">
+                                <rect key="frame" x="61" y="312" width="45" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8i-BQ-7fK">
+                                <rect key="frame" x="243" y="194" width="98" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="AzE-BF-Tzc"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="tip1Changed:" destination="LO6-DW-z4O" eventType="editingChanged" id="rqq-Ho-kcX"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPm-dZ-vaV">
+                                <rect key="frame" x="243" y="245" width="98" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="uyE-06-6J3"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="tip2Changed:" destination="LO6-DW-z4O" eventType="editingChanged" id="u81-0B-Qwo"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-wG-bRB">
+                                <rect key="frame" x="243" y="302" width="98" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="wvR-Y0-OCp"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="tip3Changed:" destination="LO6-DW-z4O" eventType="editingChanged" id="aZR-DQ-r74"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of People:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pye-F1-DEQ">
+                                <rect key="frame" x="37" y="384" width="169" height="25"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-4h-ggt">
+                                <rect key="frame" x="243" y="377" width="50" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="SRd-fa-g6r"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eNH-e9-0EZ">
+                                <rect key="frame" x="301" y="379" width="94" height="32"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="stepperChanged:" destination="LO6-DW-z4O" eventType="valueChanged" id="ONk-CR-mCT"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nds-sg-tN0"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Nds-sg-tN0" firstAttribute="trailing" secondItem="E8i-BQ-7fK" secondAttribute="trailing" constant="73" id="0Lo-ZH-y1b"/>
+                            <constraint firstItem="H2Z-gV-gV0" firstAttribute="top" secondItem="Nds-sg-tN0" secondAttribute="top" constant="47" id="0lV-gc-IKC"/>
+                            <constraint firstItem="p78-eF-0C3" firstAttribute="leading" secondItem="Nds-sg-tN0" secondAttribute="leading" constant="61" id="5f3-wM-eci"/>
+                            <constraint firstItem="Nds-sg-tN0" firstAttribute="trailing" secondItem="PLf-wG-bRB" secondAttribute="trailing" constant="73" id="7wg-Lg-u56"/>
+                            <constraint firstItem="E8i-BQ-7fK" firstAttribute="top" secondItem="Nds-sg-tN0" secondAttribute="top" constant="106" id="Aj4-97-YM9"/>
+                            <constraint firstItem="wFn-4h-ggt" firstAttribute="top" secondItem="PLf-wG-bRB" secondAttribute="bottom" constant="42" id="Hb0-5q-yYy"/>
+                            <constraint firstItem="eNH-e9-0EZ" firstAttribute="leading" secondItem="wFn-4h-ggt" secondAttribute="trailing" constant="8" symbolic="YES" id="HqY-Gn-Ylu"/>
+                            <constraint firstItem="H2Z-gV-gV0" firstAttribute="leading" secondItem="Nds-sg-tN0" secondAttribute="leading" constant="37" id="KcI-vj-LpH"/>
+                            <constraint firstItem="Pye-F1-DEQ" firstAttribute="top" secondItem="p78-eF-0C3" secondAttribute="bottom" constant="50.5" id="M1i-6I-CBY"/>
+                            <constraint firstItem="94X-7r-bi0" firstAttribute="leading" secondItem="Nds-sg-tN0" secondAttribute="leading" constant="61" id="OWd-rq-PYE"/>
+                            <constraint firstItem="p78-eF-0C3" firstAttribute="top" secondItem="qqo-vG-spG" secondAttribute="bottom" constant="35.5" id="Pro-bc-RiC"/>
+                            <constraint firstItem="HPm-dZ-vaV" firstAttribute="top" secondItem="E8i-BQ-7fK" secondAttribute="bottom" constant="18" id="SvQ-Zm-YgT"/>
+                            <constraint firstItem="PLf-wG-bRB" firstAttribute="top" secondItem="HPm-dZ-vaV" secondAttribute="bottom" constant="24" id="SxW-hx-aoV"/>
+                            <constraint firstItem="94X-7r-bi0" firstAttribute="top" secondItem="H2Z-gV-gV0" secondAttribute="bottom" constant="34" id="Wcq-bG-EPx"/>
+                            <constraint firstItem="qqo-vG-spG" firstAttribute="top" secondItem="94X-7r-bi0" secondAttribute="bottom" constant="39" id="b1R-kE-kyA"/>
+                            <constraint firstItem="Nds-sg-tN0" firstAttribute="trailing" secondItem="HPm-dZ-vaV" secondAttribute="trailing" constant="73" id="kvN-SF-grf"/>
+                            <constraint firstItem="Pye-F1-DEQ" firstAttribute="leading" secondItem="Nds-sg-tN0" secondAttribute="leading" constant="37" id="nKr-VQ-Phe"/>
+                            <constraint firstItem="qqo-vG-spG" firstAttribute="leading" secondItem="Nds-sg-tN0" secondAttribute="leading" constant="61" id="nn3-eF-g43"/>
+                            <constraint firstItem="eNH-e9-0EZ" firstAttribute="top" secondItem="PLf-wG-bRB" secondAttribute="bottom" constant="44" id="xq8-DF-4jO"/>
+                            <constraint firstItem="Nds-sg-tN0" firstAttribute="trailing" secondItem="eNH-e9-0EZ" secondAttribute="trailing" constant="19" id="yCx-8n-tJj"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zzI-CF-J2O" appends="YES" id="V2k-z4-ULG"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="CFZ-Vi-6o4"/>
+                    <connections>
+                        <outlet property="peopleCountTextField" destination="wFn-4h-ggt" id="dbp-qe-ugr"/>
+                        <outlet property="peopleStepper" destination="eNH-e9-0EZ" id="BVD-7Z-SyO"/>
+                        <outlet property="tip1Label" destination="94X-7r-bi0" id="6PW-Es-2lF"/>
+                        <outlet property="tip1TextField" destination="E8i-BQ-7fK" id="cUp-ht-1om"/>
+                        <outlet property="tip2Label" destination="qqo-vG-spG" id="beq-VP-sld"/>
+                        <outlet property="tip2TextField" destination="HPm-dZ-vaV" id="Qre-IE-7UH"/>
+                        <outlet property="tip3Label" destination="p78-eF-0C3" id="sGK-Lu-sYB"/>
+                        <outlet property="tip3TextField" destination="PLf-wG-bRB" id="uxj-h9-sBo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1O-BA-35Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zzI-CF-J2O">
+                    <connections>
+                        <action selector="onScreenTouch:" destination="LO6-DW-z4O" id="Iu4-VT-JFV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="82.366071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NhT-0i-f1V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGA-q7-y0L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0LB-01-rdV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FQr-yF-R0i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDK-px-9XM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526.61870503597129" y="77.158273381294961"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
